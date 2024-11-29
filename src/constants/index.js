@@ -26,7 +26,8 @@ import {
   dennisivy,
   manipal,
   icon,
-  ethforall
+  ethforall,
+  profilePic
 } from "../assets";
 
 import {
@@ -80,7 +81,8 @@ import {
   SiMongodb,
   SiPostgresql,
   SiCsharp,
-  SiMicropython
+  SiMicropython,
+  SiKotlin
 } from "react-icons/si";
 
 import {
@@ -142,7 +144,7 @@ export const educationList = [
   },
   {
     id: "education-2",
-    icon: pba,
+    icon: nitk,
     title: "HTL Saalfelden am Steineren Meer, Salzburg",
     duration: "2020 - 2021",
     content1: "Successfully completed the first year and moved to higher level",
@@ -314,32 +316,36 @@ export const experiences = [
     link: "https://www.movingprimates.de",
     positions: [
       {
-        title: "Software Developer Intern",
+        title: "Member of Technical Staff Intern",
         duration: "Aug 2022 - September 2022",
         content: [
           {
-            text: "Working with Shopify and Figma, helping with general work",
+            text: "Working with Shopify and Figma, helping with general work in the frontend unit.",
             link: "",
           },
+          {
+            text: "Overlooked tickets in bug fixing and github pull requests.",
+            link: ""
+          }
         ],
       },
     ],
   },
   {
-    organisation: "Hagleitner Technology International GmbH",
+    organisation: "Hagleitner International GmbH, Salzburg",
     logo: averlon,
     link: "https://www.hagleitner.com",
     positions: [
       {
-        title: "Production Intern",
+        title: "Member of Production Staff Intern",
         duration: "Aug 2023 - September 2024",
         content: [
           {
-            text: "Line work injection molding",
-            link: ""
+            text: "Worked with the production team in the linework unit, helped with general work.",
+            link: "",
           },
           {
-            text: "Order preparation",
+            text: "Build preparations for incoming orders.",
             link: ""
           }
         ],
@@ -356,7 +362,7 @@ export const experiences = [
         duration: "Aug 2022 - current",
         content: [
           {
-            text: "Everyday work in local branch, interact with people",
+            text: "Everyday work in branch, interact with customers, arranging shelves, warehouse",
             link: "",
           },
         ],
@@ -437,13 +443,18 @@ export const projects = [
       },
       {
         id: "icon-2",
-        icon: SiC,
-        name: "C"
+        icon: SiKotlin,
+        name: "Kotlin"
       },
       {
         id: "icon-3",
-        icon: SiCplusplus,
-        name: "C++"
+        icon: DiJava,
+        name: "Java"
+      },
+      {
+        id: "icon-4",
+        icon: SiSpringboot,
+        name: "Springboot"
       },
     ],
   },
@@ -548,7 +559,19 @@ export const extraCurricular = [
         link: "https://www.billa.at",
       },
     ],
-    logo: devfolio,
+    logo: iris,
+  },
+  {
+    id: 2,
+    organisation: "Daniel Jessner",
+    title: "Hobby",
+    duration: "Early life - Present",
+    content: [
+      {
+        text: "The technological field always was something that I saw as my hobby. In my freetime I often work on private projects and little coding games.",
+      },
+    ],
+    logo: profilePic,
   },
 ];
 
