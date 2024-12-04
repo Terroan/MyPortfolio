@@ -99,6 +99,39 @@ import {
 } from "react-icons/fa6";
 
 import { DiCss3, DiJava, DiMsqlServer, DiRuby } from "react-icons/di";
+  
+// API-Aufruf starten
+const fetchAccessToken = async () => {
+  const response = await fetch("/.netlify/functions/spotify-token");  // Achte auf den korrekten Pfad
+  if (response.ok) {
+    const data = await response.json();  // Verwende .json() um den Stream zu konvertieren
+    return data.access_token;
+  } else {
+    console.error("Fehler beim Abrufen des Tokens:", response.statusText);
+    return null;
+  }
+};
+
+
+const fetchTopSong = async (accessToken) => {
+  const response = await fetch(`/.netlify/functions/top-song?access_token=${accessToken}`);
+  if(response.ok) {
+    const song = await response.json();
+    return song;
+  } else {
+    console.error("Fehler beim Abrufen des Songs:", response.statusText);
+    return null;
+  }
+};
+
+const tmpToken = await fetchAccessToken();
+const tmpTrack = await fetchTopSong(tmpToken); 
+export const mostHearedSong =  tmpTrack == null || tmpTrack == undefined ? {
+  name: "No song available",
+  artists: ["Unknown Artist"],
+  cover: "https://via.placeholder.com/149", // Platzhalter-Bild
+  spotifyUrl: "#",
+} : tmpTrack;
 
 export const resumeLink = "https://drive.google.com/file/d/152FNhCTfYqhXa4sHPlm2jJXyUT5Ps5mh/view?usp=drive_link";
 export const repoLink = "https://github.com/terroan";
@@ -132,7 +165,6 @@ export const navLinks = [
   },
 ];
 
-// Add your past academic experiences here
 export const educationList = [
   {
     id: "education-1",
@@ -151,7 +183,6 @@ export const educationList = [
   },
 ];
 
-// Add your past achievments here for example - rankings in hackathons/events
 export const achievements = [
   {
     id: "a-1",
@@ -169,7 +200,6 @@ export const achievements = [
   },
 ];
 
-// Add your software developments skills here for example - programming languages, frameworks etc.
 export const skills = [
   {
     title: "Programming Languages",
@@ -308,7 +338,6 @@ export const skills = [
   },
 ];
 
-// Add your current/past professional work experience here
 export const experiences = [
   {
     organisation: "Moving Primates GmbH, Tyrol",
@@ -371,7 +400,6 @@ export const experiences = [
   }
 ];
 
-// Add information about all the projects to be listed out in your portfolio
 export const projects = [
   {
     id: "project-1",
@@ -460,7 +488,6 @@ export const projects = [
   },
 ];
 
-// Add links to blogs here
 export const blogPosts = [
   {
     id: "post-1",
@@ -527,7 +554,6 @@ export const blogPosts = [
   },
 ];
 
-// Highlight your GitHub stats like - Organisation, Issues Opened, Pull Requests etc.
 export const stats = [
   {
     id: "stats-1",
@@ -546,7 +572,6 @@ export const stats = [
   },
 ];
 
-// List out the extra curricular activities you have induldged in like - student clubs, joining research groups etc.
 export const extraCurricular = [
   {
     id: 1,
@@ -575,7 +600,6 @@ export const extraCurricular = [
   },
 ];
 
-// Links to your social media profiles
 export const socialMedia = [
   {
     id: "social-media-1",
@@ -594,16 +618,14 @@ export const socialMedia = [
   },
 ];
 
-// Your professional summary
 export const aboutMe = {
     name: "Daniel Jessner",
     githubUsername: 'Terroan',
     tagLine: "@HTL Student",
-    intro: "Software Developer from Austria who is either busy improving his craft or pondering over the next big idea. Never stop learning :)"
+    intro: "A dedicated software developer from Austria 😩, always sharpening his skills and exploring bold new ideas. Driven by curiosity and a love for learning, I see every challenge as a chance to grow and innovate."
 }
 
 // The maximum number of PRs to be displayed in the Open Source Contributions section.
 export const itemsToFetch = 20;
 
-// Add names of GitHub repos you'd like to display open source contributions from in the 'org/repo' format. 
 export const includedRepos = [];
