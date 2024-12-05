@@ -8,6 +8,10 @@ exports.handler = async function (event, context) {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+      params: {
+        time_range: "long_term", // Set to "long_term" for overall top tracks
+        limit: 1, // Optional: limits to the top track
+      },
     });
 
     const tmp = response.data.items[0];
