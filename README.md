@@ -7,7 +7,7 @@ The template used for this website uses React, a JavaScript framework for dynami
 ## Netlify
 Netlify is an online hoster for both static and dynamic websites. The reason why I decided to prefer Netlify over eg. Github Pages is that it offers a **background server** to use (it also provides a connection to the GitHub-Repo and automatically publishes the latest commits). Via so called **severless functions** Netlify allows the user to execute functions on the background server in order to not exploit them to normal clients.
 
-In my project I embedded the Spotify API to display my overall top song. The business logic for this is executed on the background server each time the website is loaded (fatch access token to API -> fetch song) and not on the client that requests the website.
+In my project I embedded the Spotify API to display my overall top song. The business logic for this is executed on the background server each time the website is loaded (fetch access token to API -> fetch song) and not on the client that requests the website.
 
 Netlify background functions are found in the folder **./netlify/functions**
 
