@@ -1,78 +1,39 @@
 import {
-  nitk,
-  cluboard,
-  cash_flow,
-  gdsc,
-  iris,
-  ecell,
-  genesis,
-  portfolio,
-  publiclab,
-  zulip,
-  cdc,
+  htlsaalfelden,
   chargeswap,
-  placeicon,
-  recruitment,
-  huntly,
   oracle,
   comicify_ai,
   greentrust,
   averlon,
-  devfolio,
-  pba,
   ethglobal,
-  polkadot,
-  lightspeed,
-  dennisivy,
-  manipal,
-  icon,
-  ethforall,
-  profilePic
+  profilePic,
+  iris
 } from "../assets";
 
 import {
   AiFillGithub,
-  AiFillInstagram,
   AiFillLinkedin,
   AiFillMail,
-  AiOutlineTwitter,
   AiFillHtml5,
   AiOutlineGitlab,
 } from "react-icons/ai";
 
 import {
-  SiDjango,
   SiJavascript,
   SiBootstrap,
-  SiReact,
-  SiTailwindcss,
   SiGraphql,
   SiPython,
-  SiCplusplus,
   SiC,
-  SiRubyonrails,
   SiJquery,
   SiVisualstudiocode,
   SiPostman,
   SiGit,
   SiMysql,
-  SiSolidity,
   SiNetlify,
-  SiChartdotjs,
-  SiVite,
-  SiArduino,
-  SiWeb3Dotjs,
-  SiIpfs,
   SiDotnet,
-  SiTwilio,
-  SiFlutter,
-  SiReplit,
   SiFlask,
   SiFigma,
-  SiGooglemaps,
   SiOpenai,
-  SiGooglecloud,
-  SiNextdotjs,
   SiMicrosoftazure,
   SiSpringboot,
   SiScikitlearn,
@@ -85,43 +46,48 @@ import {
   SiKotlin
 } from "react-icons/si";
 
-import {
-  FaHardHat,
-  FaRust
-} from "react-icons/fa";
-
-import {
-  IoIosNotificationsOutline
-} from "react-icons/io";
-
-import {
-  FaGolang
-} from "react-icons/fa6";
-
-import { DiCss3, DiJava, DiMsqlServer, DiRuby } from "react-icons/di";
+import { DiCss3, DiJava } from "react-icons/di";
   
 // API-Aufruf starten
 const fetchAccessToken = async () => {
-  const response = await fetch("/.netlify/functions/spotify-token");  // Achte auf den korrekten Pfad
-  if (response.ok) {
-    const data = await response.json();  // Verwende .json() um den Stream zu konvertieren
-    return data.access_token;
-  } else {
-    console.error("Fehler beim Abrufen des Tokens:", response.statusText);
+  try {
+    const response = await fetch("/.netlify/functions/spotify-token");  
+    if (response.ok) {
+      const data = await response.json(); 
+      return data.access_token;
+    } else {
+      console.error("Error fetching access token:", response.statusText);
+      return null;
+    }
+  } catch(error) {
+    if (error instanceof SyntaxError && error.message.includes("Unexpected token")) {
+      console.error("Netlify Functions not running!");
+    } else {
+      console.error("Error fetching access token:", error.message);
+    }
     return null;
   }
 };
 
-
 const fetchTopSong = async (accessToken) => {
-  const response = await fetch(`/.netlify/functions/top-song?access_token=${accessToken}`);
-  if(response.ok) {
-    const song = await response.json();
-    return song;
-  } else {
-    console.error("Fehler beim Abrufen des Songs:", response.statusText);
+  try {
+    const response = await fetch(`/.netlify/functions/top-song?access_token=${accessToken}`);
+    if(response.ok) {
+      const song = await response.json();
+      return song;
+    } else {
+      console.error("Error fetching song:", response.statusText);
+      return null;
+    }
+  } catch(error) {
+    if (error instanceof SyntaxError && error.message.includes("Unexpected token")) {
+      console.error("Netlify Functions not running!");
+    } else {
+      console.error("Error fetching song:", error.message);
+    }
     return null;
   }
+  
 };
 
 const tmpToken = await fetchAccessToken();
@@ -129,7 +95,7 @@ const tmpTrack = await fetchTopSong(tmpToken);
 export const mostHearedSong =  tmpTrack == null || tmpTrack == undefined ? {
   name: "No song available",
   artists: ["Unknown Artist"],
-  cover: "https://via.placeholder.com/149", // Platzhalter-Bild
+  cover: "https://via.placeholder.com/149",
   spotifyUrl: "#",
 } : tmpTrack;
 
@@ -168,7 +134,7 @@ export const navLinks = [
 export const educationList = [
   {
     id: "education-1",
-    icon: nitk,
+    icon: htlsaalfelden,
     title: "HTL St. Johann im Pongau, Salzburg",
     degree: "Graduate Engineer",
     duration: "2021 - current",
@@ -176,7 +142,7 @@ export const educationList = [
   },
   {
     id: "education-2",
-    icon: nitk,
+    icon: htlsaalfelden,
     title: "HTL Saalfelden am Steineren Meer, Salzburg",
     duration: "2020 - 2021",
     content1: "Successfully completed the first year and moved to higher level",
@@ -269,6 +235,16 @@ export const skills = [
         icon: SiScikitlearn,
         name: "Scikitlearn",
       },
+      {
+        id: "f-7",
+        icon: SiFlask,
+        name: "Flask",
+      },
+      {
+        id: "f-8",
+        icon: SiOpenai,
+        name: "OpenAi",
+      },
     ],
   },
   {
@@ -333,6 +309,11 @@ export const skills = [
         id: "t-12",
         icon: SiPostgresql,
         name: "PostgreSQL",
+      },
+      {
+        id: "t-13",
+        icon: SiNetlify,
+        name: "Netlify",
       },
     ],
   },

@@ -48,8 +48,7 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Flex Container for Song, Links, and Profile */}
-      <div className="flex items-center justify-between w-full mt-10">
+      <div className={`${layout.sectionInfo}`}>
         {/* Spotify Song Section */}
         <div className="flex flex-col items-center flex-grow">
           <h3 className="text-lg font-semibold text-white">My Top Song</h3>
@@ -65,15 +64,15 @@ const Footer = () => (
             <p className="text-teal-200 text-sm">{mostHearedSong.artists.map(artist => artist.name).join(', ')}</p>
           </div>
         </div>
-
-        {/* Profile Picture */}
-        <div>
-          <img
-            src={profilePic}
-            alt="Daniel Jessner"
-            className="w-[200px] h-[200px] border-2 border-teal-200 relative z-[5] rounded-full"
-          />
-        </div>
+      </div>
+      
+      {/* Profile Picture */}
+      <div>
+        <img
+          src={profilePic}
+          alt="Daniel Jessner"
+          className="w-[200px] h-[200px] border-2 border-teal-200 relative z-[5] rounded-full"
+        />
       </div>
     </div>
 

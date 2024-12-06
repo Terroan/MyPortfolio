@@ -1,5 +1,5 @@
-import parthmittal from "./parth.svg";
-import profilePic from "./profile-pic.jpg";
+import danieljessner from "./jessner.svg";
+import profilePic from "./profile-pic.png";
 import quotes from "./quotes.svg";
 import robot from "./robot.png";
 import send from "./Send.svg";
@@ -15,7 +15,7 @@ import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
-import nitk from "./nitk.png";
+import htlsaalfelden from "./htlsaalfelden.png";
 import cluboard from "./cluboard.png";
 import cash_flow from "./cash_flow.jpg";
 import freadom from "./freadom.jpg";
@@ -64,7 +64,7 @@ export {
   instagram,
   linkedin,
   twitter,
-  nitk,
+  htlsaalfelden,
   cluboard,
   cash_flow,
   freadom,
@@ -79,7 +79,7 @@ export {
   publiclab,
   zulip,
   cdc,
-  parthmittal,
+  danieljessner,
   profilePic,
   chargeswap,
   placeicon,
