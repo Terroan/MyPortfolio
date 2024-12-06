@@ -1,5 +1,6 @@
 const axios = require("axios");
 
+//fetch new access token from spotify api
 exports.handler = async function (event, context) {
   const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
   const clientId = process.env.SPOTIFY_CLIENT_ID;
@@ -27,17 +28,17 @@ exports.handler = async function (event, context) {
         }),
       };
     } else {
-      console.error("Kein Access Token erhalten");
+      console.error("No access token received");
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: "Kein Access Token erhalten" }),
+        body: JSON.stringify({ error: "No access token received" }),
       };
     }
   } catch (error) {
-    console.error("Fehler beim Abrufen des Tokens:", error.response ? error.response.data : error.message);
+    console.error("Error fetching access token:", error.response ? error.response.data : error.message);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Fehler beim Abrufen des Tokens" }),
+      body: JSON.stringify({ error: "Error fetching access token:" }),
     };
   }
 };

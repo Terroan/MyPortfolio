@@ -7,7 +7,11 @@ import {
   averlon,
   ethglobal,
   profilePic,
-  iris
+  iris,
+  kaprun,
+  sap,
+  ecdl,
+  programming
 } from "../assets";
 
 import {
@@ -147,6 +151,13 @@ export const educationList = [
     duration: "2020 - 2021",
     content1: "Successfully completed the first year and moved to higher level",
   },
+  {
+    id: "education-3",
+    icon: kaprun,
+    title: "NMS Kaprun, Salzburg",
+    duration: "2016 - 2020",
+    content1: "Successfully completed 4 years of compulsory schooling with a focus on technology",
+  },
 ];
 
 export const achievements = [
@@ -162,6 +173,20 @@ export const achievements = [
     icon: ethglobal,
     event: "Cybersecurity Essentials",
     content1: "Official Cisco Cybersecurity Course",
+    project: "",
+  },
+  {
+    id: "a-3",
+    icon: sap,
+    event: "SAP Certificate",
+    content1: "Official SAP Essentials Certificate",
+    project: "",
+  },
+  {
+    id: "a-4",
+    icon: ecdl,
+    event: "ECDL Certificate",
+    content1: "Official ECDL Essentials Certificate",
     project: "",
   },
 ];
@@ -369,7 +394,7 @@ export const experiences = [
     positions: [
       {
         title: "Salesman",
-        duration: "Aug 2022 - current",
+        duration: "Aug 2022 - Present",
         content: [
           {
             text: "Everyday work in branch, interact with customers, arranging shelves, warehouse",
@@ -464,6 +489,41 @@ export const projects = [
         id: "icon-4",
         icon: SiSpringboot,
         name: "Springboot"
+      },
+    ],
+  },
+  {
+    id: "project-4",
+    title: "School and Hobby",
+    github: "",
+    image: programming,
+    content:
+      "Several small projects for school or for hobby related means, including the areas programming, design, network technology, ... ",
+    stack: [
+      {
+        id: "icon-1",
+        icon: SiPython,
+        name: "Python"
+      },
+      {
+        id: "icon-2",
+        icon: DiJava,
+        name: "Java"
+      },
+      {
+        id: "icon-3",
+        icon: SiSpringboot,
+        name: "Springboot"
+      },
+      {
+        id: "icon-4",
+        icon: SiCsharp,
+        name: "C#"
+      },
+      {
+        id: "icon-5",
+        icon: SiC,
+        name: "C"
       },
     ],
   },

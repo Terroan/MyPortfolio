@@ -1,5 +1,6 @@
 const axios = require("axios");
 
+// fetch top song from spotify api
 exports.handler = async function (event, context) {
   const accessToken = event.queryStringParameters.access_token;
 
@@ -9,8 +10,8 @@ exports.handler = async function (event, context) {
         Authorization: `Bearer ${accessToken}`,
       },
       params: {
-        time_range: "long_term", // Set to "long_term" for overall top tracks
-        limit: 1, // Optional: limits to the top track
+        time_range: "long_term", // overall top song
+        limit: 1,
       },
     });
 

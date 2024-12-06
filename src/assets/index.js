@@ -47,6 +47,10 @@ import dennisivy from "./dennisivy.png";
 import manipal from "./manipal.png";
 import icon from "./icon.jpg";
 import ethforall from "./ethforall.png";
+import sap from "./sap.png";
+import kaprun from "./kaprun.png";
+import ecdl from "./ecdl.png";
+import programming from "./programming.png";
 
 export {
   quotes,
@@ -97,5 +101,9 @@ export {
   dennisivy,
   manipal,
   icon,
-  ethforall
+  ethforall,
+  kaprun,
+  sap,
+  ecdl,
+  programming
 };
