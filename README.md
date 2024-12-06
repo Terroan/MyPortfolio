@@ -10,3 +10,11 @@ Netlify is an online hoster for both static and dynamic websites. The reason why
 In my project I embedded the Spotify API to display my overall top song. The business logic for this is executed on the background server each time the website is loaded (fatch access token to API -> fetch song) and not on the client that requests the website.
 
 Netlify background functions are found in the folder **./netlify/functions**
+
+### Environment Variables
+One essential point to not forget are the environment variables in Netlify. They are something that the user usually must not see 
+and configured directly in the Netlify site settings, where you add a value to them.
+The values can then be read from the serverless functions:
+
+![alt text](image.png)
+
